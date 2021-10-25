@@ -2,8 +2,27 @@ import { app, BrowserWindow } from "electron";
 import { add } from "@common/utils";
 import { join } from "path";
 import { pathToFileURL, format as formatUrl } from "url";
+import { start as start1 } from "./features/feature1";
+import { start as start2 } from "./features/feature2";
 
 const isDevelopment = process.env.NODE_ENV === "development";
+const enableFeature1 = false;
+const enableFeature2 = true;
+const enableFeatureAdd = true;
+
+if (false) {
+  console.log("FEAUTURE 1 IS ENABLED");
+  start1();
+}
+
+if (true) {
+  console.log("FEATURE 2 IS ENABLED");
+  start2();
+}
+
+if (true) {
+  console.log("FEATURE ADD IS ENABLED ", add(1, 2));
+}
 
 function createWindow() {
   const win = new BrowserWindow({
